@@ -261,7 +261,7 @@ void DelphiESRApplication::initialize() {
 
     auto status = getStatus();
     status.status = cav_msgs::DriverStatus::OPERATIONAL;
-    status.sensor = true;
+    status.radar = true;
 
     setStatus(status);
     last_radar_update_ = ros::Time::now();
@@ -384,7 +384,7 @@ void DelphiESRApplication::pre_spin() {
         ROS_WARN_STREAM_THROTTLE(1,"Not receiving updates from sensor");
         auto status = getStatus();
         status.status = cav_msgs::DriverStatus::FAULT;
-        status.sensor = true;
+        status.radar = true;
 
         setStatus(status);
     }
@@ -392,7 +392,7 @@ void DelphiESRApplication::pre_spin() {
     {
         auto status = getStatus();
         status.status = cav_msgs::DriverStatus::OPERATIONAL;
-        status.sensor = true;
+        status.radar = true;
 
         setStatus(status);
     }
