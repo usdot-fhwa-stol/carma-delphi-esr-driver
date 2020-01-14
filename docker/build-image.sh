@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#  Copyright (C) 2018-2019 LEIDOS.
+#  Copyright (C) 2018-2020 LEIDOS.
 # 
 #  Licensed under the Apache License, Version 2.0 (the "License"); you may not
 #  use this file except in compliance with the License. You may obtain a copy of
@@ -17,7 +17,7 @@
 USERNAME=usdotfhwastol
 
 cd "$(dirname "$0")"
-IMAGE=$(./get-package-name.sh | tr '[:upper:]' '[:lower:]')
+IMAGE=$(./get-image-name.sh | tr '[:upper:]' '[:lower:]')
 
 echo ""
 echo "##### $IMAGE Docker Image Build Script #####"
