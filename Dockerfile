@@ -31,7 +31,7 @@ LABEL org.label-schema.description="Delphi ESR radar driver for the CARMA Platfo
 LABEL org.label-schema.vendor="Leidos"
 LABEL org.label-schema.version=${VERSION}
 LABEL org.label-schema.url="https://highways.dot.gov/research/research-programs/operations/CARMA"
-LABEL org.label-schema.vcs-url="https://github.com/usdot-fhwa-stol/CARMADelphiEsrDriver/"
+LABEL org.label-schema.vcs-url="https://github.com/usdot-fhwa-stol/carma-delphi-esr-driver/"
 LABEL org.label-schema.vcs-ref=${VCS_REF}
 LABEL org.label-schema.build-date=${BUILD_DATE}
 
