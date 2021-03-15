@@ -1,4 +1,4 @@
-#  Copyright (C) 2018-2019 LEIDOS.
+#  Copyright (C) 2018-2021 LEIDOS.
 # 
 #  Licensed under the Apache License, Version 2.0 (the "License"); you may not
 #  use this file except in compliance with the License. You may obtain a copy of
@@ -12,14 +12,14 @@
 #  License for the specific language governing permissions and limitations under
 #  the License.
 
-FROM usdotfhwastol/carma-base:3.2.0 as setup
+FROM usdotfhwastol/carma-base:carma-system-3.5.0 as setup
 
 RUN mkdir ~/src
 COPY --chown=carma . /home/carma/src/
 RUN ~/src/docker/checkout.sh
 RUN ~/src/docker/install.sh
 
-FROM usdotfhwastol/carma-base:3.2.0
+FROM usdotfhwastol/carma-base:carma-system-3.5.0
 
 ARG BUILD_DATE="NULL"
 ARG VERSION="NULL"
@@ -31,7 +31,7 @@ LABEL org.label-schema.description="Delphi ESR radar driver for the CARMA Platfo
 LABEL org.label-schema.vendor="Leidos"
 LABEL org.label-schema.version=${VERSION}
 LABEL org.label-schema.url="https://highways.dot.gov/research/research-programs/operations/CARMA"
-LABEL org.label-schema.vcs-url="https://github.com/usdot-fhwa-stol/CARMADelphiEsrDriver/"
+LABEL org.label-schema.vcs-url="https://github.com/usdot-fhwa-stol/carma-delphi-esr-driver/"
 LABEL org.label-schema.vcs-ref=${VCS_REF}
 LABEL org.label-schema.build-date=${BUILD_DATE}
 
