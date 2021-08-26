@@ -135,7 +135,6 @@ file(GLOB_RECURSE headers */*.hpp */*.h)
 add_executable( ${PROJECT_NAME}_node
         ${headers}
          src/main.cpp
-         src/delphi_esr_can_client.h
          src/delphi_esr_application.cpp)
 
 target_link_libraries( ${PROJECT_NAME}_node ${Boost_LIBRARIES} ${catkin_LIBRARIES})
