@@ -12,8 +12,7 @@
 #  License for the specific language governing permissions and limitations under
 #  the License.
 
-
-FROM usdotfhwastol/carma-base:develop as base
+FROM usdotfhwastol/carma-base:carma-system-3.8.0 as base
 FROM base as setup
 
 RUN mkdir ~/src
@@ -26,6 +25,10 @@ FROM base
 ARG BUILD_DATE="NULL"
 ARG VERSION="NULL"
 ARG VCS_REF="NULL"
+
+# Install AutonomousStuff Delphi ESR Driver Package
+RUN sudo apt update && \
+  sudo apt install ros-$ROS_DISTRO-delphi-esr -y
 
 LABEL org.label-schema.schema-version="1.0"
 LABEL org.label-schema.name="carma-delphi-esr-driver"
