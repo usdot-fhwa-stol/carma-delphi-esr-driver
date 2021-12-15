@@ -161,13 +161,6 @@ void DelphiESRApplication::publish_updates() {
 
         obj.velocity.twist.linear.z = 0;
 
-
-        obj.presence_vector |= cav_msgs::ExternalObject::RANGE_RATE_PRESENCE_VECTOR;
-        obj.range_rate = it.range_rate;
-
-        obj.presence_vector |= cav_msgs::ExternalObject::AZIMUTH_RATE_PRESENCE_VECTOR;
-        obj.azimuth_rate = -it.lat_rate/it.range;
-
         obj.presence_vector |= cav_msgs::ExternalObject::CONFIDENCE_PRESENCE_VECTOR;
         obj.confidence = it.track_status == delphi::TrackStatus::NewTarget ? 0.5 : 1.0;
 
