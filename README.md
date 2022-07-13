@@ -1,3 +1,7 @@
+| CicleCI Build Status | Sonar Code Quality | DockerHub Release |
+|------|-----|-----|
+[![CircleCI](https://img.shields.io/circleci/build/gh/usdot-fhwa-stol/carma-delphi-esr-driver/develop?label=CircleCI)](https://app.circleci.com/pipelines/github/usdot-fhwa-stol/carma-delphi-esr-driver?branch=develop) | [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=usdot-fhwa-stol_CARMADelphiEsrDriver&metric=alert_status)](https://sonarcloud.io/dashboard?id=usdot-fhwa-stol_CARMADelphiEsrDriver) | [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/usdotfhwastol/carma-delphi-esr-driver?label=carma-delphi-esr-driver)](https://hub.docker.com/repository/docker/usdotfhwastol/carma-delphi-esr-driver) 
+
 # CARMADelphiEsrDriver
 CARMADelphiEsrDriver is the device driver for use with Delphi ESR Radar devices and the CARMA Platform
 
