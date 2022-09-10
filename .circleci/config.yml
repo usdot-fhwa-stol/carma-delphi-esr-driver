@@ -50,7 +50,7 @@ jobs:
           name: Pull Deps
           command: |
             source ${INIT_ENV}
-            ./src/CARMADelphiEsrDriver/docker/checkout.sh ${PWD}
+            ./src/CARMADelphiEsrDriver/docker/checkout.bash ${PWD}
       - run:
           name: Build Driver
           command: |
