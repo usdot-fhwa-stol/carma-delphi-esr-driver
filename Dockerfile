@@ -12,13 +12,14 @@
 #  License for the specific language governing permissions and limitations under
 #  the License.
 
-FROM usdotfhwastol/carma-base:carma-system-3.8.0 as base
+FROM usdotfhwastol/carma-base:carma-system-3.8.0-fixed as base
 FROM base as setup
 
-RUN mkdir ~/src
-COPY --chown=carma . /home/carma/src/
-RUN ~/src/docker/checkout.sh
-RUN ~/src/docker/install.sh
+RUN mkdir ~/carma_ws
+RUN mkdir ~/carma_ws/src
+COPY --chown=carma . /home/carma/carma_ws/src/
+RUN ~/carma_ws/src/docker/checkout.sh
+RUN ~/carma_ws/src/docker/install.sh
 
 FROM base
 
@@ -40,7 +41,7 @@ LABEL org.label-schema.vcs-url="https://github.com/usdot-fhwa-stol/carma-delphi-
 LABEL org.label-schema.vcs-ref=${VCS_REF}
 LABEL org.label-schema.build-date=${BUILD_DATE}
 
-COPY --from=setup /home/carma/install /opt/carma/install
+COPY --from=setup /home/carma/carma_ws/install /opt/carma/install
 RUN sudo chmod -R +x /opt/carma/install
 
 CMD  [ "wait-for-it.sh", "localhost:11311", "--", "roslaunch", "delphi_esr_driver", "delphi_esr_driver.launch", "remap_ns:=/saxton_cav/drivers" ]

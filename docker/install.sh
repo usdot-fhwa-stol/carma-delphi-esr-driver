@@ -15,5 +15,5 @@
 #  the License.
 
 source /opt/ros/kinetic/setup.bash
-cd ~/
+cd ~/carma_ws
 catkin_make install -DCMAKE_BUILD_TYPE=Release
